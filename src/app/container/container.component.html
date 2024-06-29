@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="sub">
+      <h3><strong>calculate your BMI</strong></h3>
+     <span class="input">
+      <label for="weight">Weight: </label>
+      <input type="number" step="0.1" class="textbox" (change)="calculate(wght.value , hght.value)"  placeholder="enter your weight in kg" #wght name="weight" id="weight" >
+     </span>
+     <span class="input">
+      <label for="height">Height: </label>
+      <input type="number" max="2.5" class="textbox" (change)="calculate(wght.value , hght.value)" step="0.1" placeholder="enter your height in m " #hght name="height" id="height">
+
+     </span>
+        <button class="btn"  (click)="calculate(wght.value , hght.value)">calculate
+  
+      </button>
+      <div class="result-container">
+        @if(bmi>0) {
+          <h2 class="res-txt">
+            Your BMI is :
+          </h2>
+          <p class="result" [class.obesity]="red" [class.underweight]="yellow"  [class.healthy]="green" >{{bmi}} </p>
+          <p class="result" [class.obesity]="red" [class.underweight]="yellow"  [class.healthy]="green"> {{message}}</p>
+        }
+      </div>
+        
+        <p style="font-size: 0.8rem;">made by Rahmani Aness</p>
+    </div>
+  </div>
+  <!-- <div class="sub2">
+    <span><strong>Below 18.5 ==></strong><p class="underweight">Underweight</p></span>
+    <span><strong>18.5-24.9 ==></strong><p class="healthy">Healthy Weight</p></span>
+    <span><strong>25-29.9 ==></strong><p class="overweight">Overweight</p></span>
+    <span><strong>30 and Above ==></strong><p class="obesity">	Obesity</p></span>
+  </div> -->
